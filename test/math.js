@@ -2,20 +2,20 @@ var assert = require('assert');
 var shared = require('./shared');
 
 describe('math', function() {
-  var renderer = new shared.Renderer('@import "math";');
+  var renderer = new shared.Renderer('@use "sass:math";@import "math";');
 
   describe('pow', function() {
     it('pow(3, 2) == 9', function() {
       assert.strictEqual(renderer.value('pow(3, 2)'), '9')
     });
-    it('pow(4, 3/2) == 8', function() {
-      assert.strictEqual(renderer.value('pow(4, 3/2)'), '8')
+    it('pow(4, math.div(3, 2)) == 8', function() {
+      assert.strictEqual(renderer.value('pow(4, math.div(3, 2))'), '8')
     });
-    it('pow(144, 1/2) == 12', function() {
-      assert.strictEqual(renderer.value('pow(144, 1/2)'), '12')
+    it('pow(144, math.div(1, 2)) == 12', function() {
+      assert.strictEqual(renderer.value('pow(144, math.div(1, 2))'), '12')
     });
-    it('pow(0, 1/2) == 0', function() {
-      assert.strictEqual(renderer.value('pow(0, 1/2)'), '0')
+    it('pow(0, math.div(1, 2)) == 0', function() {
+      assert.strictEqual(renderer.value('pow(0, math.div(1, 2))'), '0')
     });
     it('pow(-3, 2) == 9', function() {
       assert.strictEqual(renderer.value('pow(-3, 2)'), '9')
@@ -26,8 +26,8 @@ describe('math', function() {
     it('pow(3, -2)', function() {
       shared.similar(renderer.value('pow(3, -2)'), Math.pow(3, -2));
     });
-    it('pow(64, -1/2) == .125', function() {
-      assert.strictEqual(renderer.value('pow(64, -1/2)'), '.125')
+    it('pow(64, math.div(-1, 2)) == .125', function() {
+      assert.strictEqual(renderer.value('pow(64, math.div(-1, 2))'), '.125')
     });
     it('pow(1200, 3.4)', function() {
       shared.similar(renderer.value('pow(1200, 3.4)'), Math.pow(1200, 3.4), .1);
@@ -82,11 +82,11 @@ describe('math', function() {
     it('sin(-1 * pi()) == 0', function() {
       assert.strictEqual(renderer.value('sin(-1 * pi())'), '0');
     });
-    it('sin(1/2 * pi()) == 1', function() {
-      assert.strictEqual(renderer.value('sin(1/2 * pi())'), '1');
+    it('sin(math.div(1, 2) * pi()) == 1', function() {
+      assert.strictEqual(renderer.value('sin(math.div(1, 2) * pi())'), '1');
     });
-    it('sin(3/2 * pi()) == -1', function() {
-      assert.strictEqual(renderer.value('sin(3/2 * pi())'), '-1');
+    it('sin(math.div(3, 2) * pi()) == -1', function() {
+      assert.strictEqual(renderer.value('sin(math.div(3, 2) * pi())'), '-1');
     });
     it('sin(1)', function() {
       shared.similar(renderer.value('sin(1)'), Math.sin(1));

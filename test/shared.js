@@ -8,7 +8,7 @@ var Renderer = function(head) {
 
 Renderer.prototype.block = function(input) {
   var result = sass.compileString(
-    this.head + ' .test{' + input + '}',
+    this.head + '.test{' + input + '}',
     {
       style: 'compressed',
       loadPaths: [path.resolve(__dirname, '../sass/')],
