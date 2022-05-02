@@ -1,14 +1,12 @@
-Sass-Planifolia - Vanilla Sass helper functions
+# WIP fork of `sass-planifolia`
 
-[Compass](http://compass-style.org/) was great, but it has been unmaintained
-for a while now. In addition, the rise of
-[libSass](http://sass-lang.com/libsass) means that ruby extensions are no
-longer a good way forward.
+This pure-Sass library provides an alternative to some of the features that will be added in [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/), namely `pf-mix` as an alternative to `color-mix()` and support for Lab color space through the `lab` function.
 
-Planifolia is a collection of commonly used helper functions.  It does not
-depend on a specific implementation of the Sass compiler.
+When these functions become commonly available through CSS, this library will be deprecated. See the *Alternatives* section below for more information.
 
-The following modules are included:
+The library is a fork of Tobias Bengfort's [sass-planifolia](https://github.com/xi/sass-planifolia/). The aim of this fork is to strip it down to just the color-manipulation functions and bring it up to date with the current version of Sass. Read [this pull request](https://github.com/xi/sass-planifolia/pull/6) to understand why this fork exists.
+
+Currently, the following modules are included:
 
 -   **math** for high performance math functions
 -   **contrast** for WCAG compatible [color
@@ -21,10 +19,11 @@ Also note that these modules will only define mixins and variables. They will
 not output any CSS. This means that importing them does not add a single byte
 to your CSS.
 
-See the [full documentation](https://xi.github.io/sass-planifolia/) for more
-details.
+See the [full documentation for sass-planifolia](https://xi.github.io/sass-planifolia/) for more details. The documentation for this fork has not yet been updated.
 
-# Quick start
+## Quick start
+
+The library for this fork has not yet been released, so use sass-planifolia instead for now:
 
     npm install sass-planifolia
 
@@ -52,21 +51,10 @@ Import it in your Sass files:
 }
 ```
 
-# What is not included?
+## Alternatives
 
--   Vendor prefixes, polyfills or browser hacks. There are plenty of librariers
-    for that.
--   pt/px/em/rem conversion. That is (a) not possible and (b) not helpful. Each
-    unit has its specific use case. Learn to use the right units directly!
-
-# Similar libraries
-
--   [mathsass](https://github.com/terkel/mathsass) is another very good
-    pure-sass math implementation.
--   [accoutrement-color](https://github.com/oddbird/accoutrement-color) and
-    [bourbon](https://github.com/thoughtbot/bourbon) also contain
-    WCAG-appropriate color-contrast functions, but they ignore
-    alpha-transparency.
--   [eyeglass-math](https://github.com/sass-eyeglass/eyeglass-math) and
-    [chromatic-sass](https://github.com/bugsnag/chromatic-sass) also do
-    advanced math/color manipulation, but they can only be used with node-sass.
+- [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/) will provide native support for Lab and related color spaces and will support color mixing with `colox-mix()`. However, as of May 2022, it is not yet widely available.
+- [Parcel's CSS transformer](https://github.com/parcel-bundler/parcel-css) implements some of the functionality of CSS Color Module Level 5, including `color-mix()` and `lch()`. If you're already using Parcel, just use that instead!
+- [PostCSS](https://postcss.org/) supports Lab and related color spaces through [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env), but [as of May 2022, it does not support `color-mix()`](https://github.com/csstools/postcss-plugins/issues/177).
+- This library is a fork of [sass-planifolia](https://github.com/xi/sass-planifolia/). This fork has less functionality, but aims to be compatible with Dart Sass (without triggering any deprecation warnings). Changes made here may or may not be upstreamed into Planifolia in the future.
+- [oddbird/blend](https://github.com/oddbird/blend) also provides early access to some of the functionality of the CSS Color Module Level 5 features, but unless I'm missing something, there is no equivalent of `pf-mix`.
