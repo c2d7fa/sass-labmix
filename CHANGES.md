@@ -2,7 +2,9 @@
 ------------------
 
 - **breaking:** drop compatibility with LibSass
+- **breaking:** remove `clearfix` and `grid` modules
 - fix deprecation warnings when using Dart Sass
+- ignore `$steps` argument to most functions in `math` module
 
 0.6.0 (2018-04-08)
 ------------------
