@@ -1,8 +1,9 @@
-1.0.0 (Unreleased as of 2022-05-02)
+1.0.0-alpha1 (2022-05-02)
 ------------------
 
 - **breaking:** drop compatibility with LibSass
 - **breaking:** remove `clearfix` and `grid` modules
+- **breaking:** rename this fork to `@johv/sass-labmix`
 - fix deprecation warnings when using Dart Sass
 - ignore `$steps` argument to most functions in `math` module
 

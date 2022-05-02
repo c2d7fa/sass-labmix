@@ -1,7 +1,7 @@
 {
-  "name": "sass-planifolia",
+  "name": "@johv/sass-labmix",
   "version": "1.0.0-alpha1",
-  "description": "Vanilla Sass helper functions",
+  "description": "Pure-Sass color mixing in Lab, LCh and related color spaces",
   "main": "index.js",
   "devDependencies": {
     "mocha": "^10.0.0",
@@ -17,11 +17,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xi/sass-planifolia.git"
+    "url": "git+https://github.com/c2d7fa/sass-labmix.git"
   },
   "files": [
     "sass"
   ],
-  "author": "Tobias Bengfort <tobias.bengfort@posteo.de>",
+  "contributors": [
+    "Tobias Bengfort <tobias.bengfort@posteo.de>",
+    "Jonas Hvid <mail@johv.dk> (https://johv.dk/)"
+  ],
   "license": "MIT"
 }

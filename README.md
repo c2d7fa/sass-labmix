@@ -1,6 +1,6 @@
-# WIP fork of `sass-planifolia`
+# `@johv/sass-labmix`
 
-This pure-Sass library provides an alternative to some of the features that will be added in [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/), namely `pf-mix` as an alternative to `color-mix()` and support for Lab color space through the `lab` function.
+This pure-Sass library provides an alternative to some of the features that will be added in [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/), namely `pf-mix` as an alternative to `color-mix()` and support for Lab and LCh color spaces through the `lab` and `lch` functions.
 
 When these functions become commonly available through CSS, this library will be deprecated. See the *Alternatives* section below for more information.
 
@@ -23,16 +23,16 @@ See the [full documentation for sass-planifolia](https://xi.github.io/sass-plani
 
 ## Quick start
 
-The library for this fork has not yet been released, so use sass-planifolia instead for now:
+Install the library:
 
-    npm install sass-planifolia
+    npm install --save-dev @johv/sass-labmix
 
 Import it in your Sass files:
 
 ```scss
-@import "node_modules/sass-planifolia/sass/math";
-@import "node_modules/sass-planifolia/sass/contrast";
-@import "node_modules/sass-planifolia/sass/color";
+@import "node_modules/@johv/sass-labmix/sass/math";
+@import "node_modules/@johv/sass-labmix/sass/contrast";
+@import "node_modules/@johv/sass-labmix/sass/color";
 
 .test {
     background-color: red;
