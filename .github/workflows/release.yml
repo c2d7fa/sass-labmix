@@ -1,0 +1,35 @@
+name: Release new version
+on:
+  push:
+    tags: ["*"]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build documentation
+        run: |
+          npm ci
+          npm run docs
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: sassdoc
+          git-config-name: "Jonas Hvid"
+          git-config-email: "mail@johv.dk"
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          published_version="$(npm show "$(node -pe 'require("./package.json").name')" version)"
+          local_version="$(node -pe 'require("./package.json").version')"
+          if [[ published_version != local_version ]]; then
+            echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >.npmrc
+            npm ci
+            npm publish
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
