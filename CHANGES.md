@@ -2,6 +2,7 @@
 ------------------
 
 - **breaking:** remove `math` module
+- **breaking:** combine everything into a single module called `index`
 
 1.0.0-alpha1 (2022-05-02)
 ------------------

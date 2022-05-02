@@ -11,7 +11,7 @@ Renderer.prototype.block = function(input) {
     this.head + '.test{' + input + '}',
     {
       style: 'compressed',
-      loadPaths: [path.resolve(__dirname, '../sass/')],
+      loadPaths: [path.resolve(__dirname, '../')],
     },
   );
   return result.css.slice(".test".length);

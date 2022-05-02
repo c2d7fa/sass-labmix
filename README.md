@@ -6,19 +6,6 @@ When these functions become commonly available through CSS, this library will be
 
 The library is a fork of Tobias Bengfort's [sass-planifolia](https://github.com/xi/sass-planifolia/). The aim of this fork is to strip it down to just the color-manipulation functions and bring it up to date with the current version of Sass. Read [this pull request](https://github.com/xi/sass-planifolia/pull/6) to understand why this fork exists.
 
-Currently, the following modules are included:
-
--   **math** for high performance math functions
--   **contrast** for WCAG compatible [color
-    contrast](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) functions
--   **color** for CIELAB/CIELUV based color functions (with support for
-    [HSLuv](http://www.hsluv.org/))
-
-These modules can be imported individually (color depends on math though).
-Also note that these modules will only define mixins and variables. They will
-not output any CSS. This means that importing them does not add a single byte
-to your CSS.
-
 See the [full documentation](https://c2d7fa.github.io/sass-labmix/) for more details.
 
 ## Quick start
@@ -27,27 +14,22 @@ Install the library:
 
     npm install --save-dev @johv/sass-labmix
 
-Import it in your Sass files:
+Import it in your Sass files (most bundlers support the tilde-syntax; otherwise use `node_modules/@johv/sass-labmix` explicitly):
 
 ```scss
-@import "node_modules/@johv/sass-labmix/sass/math";
-@import "node_modules/@johv/sass-labmix/sass/contrast";
-@import "node_modules/@johv/sass-labmix/sass/color";
+@use "~@johv/sass-labmix" as labmix;
 
 .test {
     background-color: red;
 
     // pick between two colors (default: black and white) to get good contrast
-    color: contrast-color(red);
+    color: labmix.contrast-color(red);
 
     // mix orange with black or white to get good contrast to red
-    border-color: contrast-stretch(red, orange);
+    border-color: labmix.contrast-stretch(red, orange);
 
     // mix red with black in a perceptually uniform color space
-    box-shadow: 0 0 1em pf-shade(red, 0.5, 'lab');
-
-    // calculate modular scale dynamically
-    font-size: 16px * pow(1.5, 2);
+    box-shadow: 0 0 1em labmix.pf-shade(red, 0.5, 'lab');
 }
 ```
 
