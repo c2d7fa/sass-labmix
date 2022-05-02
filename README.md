@@ -1,6 +1,6 @@
 # `@johv/sass-labmix`
 
-This pure-Sass library provides an alternative to some of the features that will be added in [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/), namely `pf-mix` as an alternative to `color-mix()` and support for Lab and LCh color spaces through the `lab` and `lch` functions.
+This pure-Sass library provides an alternative to some of the features that will be added in [CSS Color Module Level 5](https://www.w3.org/TR/css-color-5/), namely `mix` as an alternative to `color-mix()` and support for Lab and LCh color spaces through the `lab` and `lch` functions.
 
 When these functions become commonly available through CSS, this library will be deprecated. See the *Alternatives* section below for more information.
 
@@ -29,7 +29,7 @@ Import it in your Sass files (most bundlers support the tilde-syntax; otherwise 
     border-color: labmix.contrast-stretch(red, orange);
 
     // mix red with black in a perceptually uniform color space
-    box-shadow: 0 0 1em labmix.pf-shade(red, 0.5, 'lab');
+    box-shadow: 0 0 1em labmix.shade(red, 0.5, 'lab');
 }
 ```
 
@@ -39,4 +39,4 @@ Import it in your Sass files (most bundlers support the tilde-syntax; otherwise 
 - [Parcel's CSS transformer](https://github.com/parcel-bundler/parcel-css) implements some of the functionality of CSS Color Module Level 5, including `color-mix()` and `lch()`. If you're already using Parcel, just use that instead!
 - [PostCSS](https://postcss.org/) supports Lab and related color spaces through [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env), but [as of May 2022, it does not support `color-mix()`](https://github.com/csstools/postcss-plugins/issues/177).
 - This library is a fork of [sass-planifolia](https://github.com/xi/sass-planifolia/). This fork has less functionality, but aims to be compatible with Dart Sass (without triggering any deprecation warnings). Changes made here may or may not be upstreamed into Planifolia in the future.
-- [oddbird/blend](https://github.com/oddbird/blend) also provides early access to some of the functionality of the CSS Color Module Level 5 features, but unless I'm missing something, there is no equivalent of `pf-mix`.
+- [oddbird/blend](https://github.com/oddbird/blend) also provides early access to some of the functionality of the CSS Color Module Level 5 features, but unless I'm missing something, there is no equivalent of `mix`.

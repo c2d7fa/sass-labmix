@@ -3,6 +3,7 @@
 
 - **breaking:** remove `math` module
 - **breaking:** combine everything into a single module called `index`
+- **breaking:** remove `pf-` prefix from functions
 
 1.0.0-alpha1 (2022-05-02)
 ------------------
