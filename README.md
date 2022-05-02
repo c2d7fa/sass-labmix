@@ -19,7 +19,7 @@ Also note that these modules will only define mixins and variables. They will
 not output any CSS. This means that importing them does not add a single byte
 to your CSS.
 
-See the [full documentation for sass-planifolia](https://xi.github.io/sass-planifolia/) for more details. The documentation for this fork has not yet been updated.
+See the [full documentation](https://c2d7fa.github.io/sass-labmix/) for more details.
 
 ## Quick start
 
