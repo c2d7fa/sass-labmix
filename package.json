@@ -1,6 +1,6 @@
 {
   "name": "@johv/sass-labmix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pure-Sass color mixing in Lab, LCh and related color spaces",
   "main": "index.js",
   "devDependencies": {
@@ -20,7 +20,7 @@
     "url": "git+https://github.com/c2d7fa/sass-labmix.git"
   },
   "files": [
-    "sass"
+    "index.scss"
   ],
   "contributors": [
     "Tobias Bengfort <tobias.bengfort@posteo.de>",
