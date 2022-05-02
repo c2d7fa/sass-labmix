@@ -1,6 +1,7 @@
-0.6.1 (Unreleased as of 2022-05-02)
+1.0.0 (Unreleased as of 2022-05-02)
 ------------------
 
+- **breaking:** drop compatibility with LibSass
 - fix deprecation warnings when using Dart Sass
 
 0.6.0 (2018-04-08)
