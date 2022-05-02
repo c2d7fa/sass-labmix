@@ -1,3 +1,9 @@
+1.0.0-alpha4 (2022-05-02)
+------------------
+
+- fix major bugs introduced in last release
+- **breaking:** rename more functions to avoid collisions with built-ins
+
 1.0.0-alpha3 (2022-05-02)
 ------------------
 
