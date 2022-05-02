@@ -31,7 +31,25 @@ Import it in your Sass files (most bundlers support the tilde-syntax; otherwise 
     // mix red with black in a perceptually uniform color space
     box-shadow: 0 0 1em labmix.shade(red, 0.5, 'lab');
 }
+
+// create a gradient between two colors with idential lightness
+.stepped-gradient {
+    $start: labmix.lch(80, 10, 200deg);
+    $end: labmix.lch(80, 30, 120deg);
+
+    .step1 { background-color: labmix.mix($start, $end, 100%); }
+    .step2 { background-color: labmix.mix($start, $end, 75%); }
+    .step3 { background-color: labmix.mix($start, $end, 50%); }
+    .step4 { background-color: labmix.mix($start, $end, 25%); }
+    .step5 { background-color: labmix.mix($start, $end, 0%); }
+}
 ```
+
+The `.stepped-gradient` example above produces this output:
+
+<p align="center">
+  <img src="https://github.com/c2d7fa/sass-labmix/blob/main/stepped-gradient.png?raw=true" />
+</p>
 
 ## Alternatives
 
