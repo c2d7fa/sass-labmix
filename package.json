@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "docs": "sassdoc sass"
+    "docs": "sassdoc ."
   },
   "keywords": [
     "sass"
