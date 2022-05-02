@@ -1,6 +1,6 @@
 {
   "name": "@johv/sass-labmix",
-  "version": "1.0.0-alpha4",
+  "version": "1.0.0",
   "description": "Pure-Sass color mixing in Lab, LCh and related color spaces",
   "main": "index.js",
   "devDependencies": {
